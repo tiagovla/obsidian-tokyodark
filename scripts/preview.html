@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TokyoDark component preview</title>
+    <style id="preview-layout">
+      #preview {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) 280px;
+        grid-template-rows: 42px 1fr 27px;
+        height: 100vh;
+      }
+      .preview-title {
+        grid-column: 1/-1;
+        padding: 10px 20px;
+        background: var(--background-secondary-alt);
+        font-size: 13px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--background-modifier-border);
+      }
+      .preview-title span {
+        margin-left: 22px;
+        font-weight: 400;
+        color: var(--text-faint);
+      }
+      .preview-files,
+      .preview-outline {
+        background: var(--background-secondary);
+        padding: 20px 14px;
+        overflow: auto;
+      }
+      .preview-files {
+        border-right: 1px solid var(--background-modifier-border);
+      }
+      .preview-outline {
+        border-left: 1px solid var(--background-modifier-border);
+        padding: 20px 24px;
+        font-size: 13px;
+      }
+      .preview-label {
+        font-size: 10px;
+        letter-spacing: 1.6px;
+        color: var(--text-faint);
+        margin: 0 8px 18px;
+      }
+      .preview-files .preview-label:not(:first-child) {
+        margin-top: 38px;
+      }
+      .preview-files input {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+      .preview-files button {
+        width: 100%;
+      }
+      .preview-editor {
+        overflow: auto;
+        background: var(--background-primary);
+      }
+      .preview-tab {
+        height: 40px;
+        border-bottom: 1px solid var(--background-modifier-border);
+        padding: 12px 24px;
+        font-size: 12px;
+        color: var(--color-accent);
+      }
+      .preview-editor article {
+        max-width: 750px;
+        padding: 14px 45px 32px;
+        margin: auto;
+      }
+      .preview-editor h1 {
+        margin-top: 20px;
+      }
+      .preview-editor h2 {
+        margin-top: 30px;
+      }
+      .preview-editor h3 {
+        margin-top: 24px;
+      }
+      .preview-outline h4 {
+        margin-top: 25px;
+      }
+      .preview-outline h5,
+      .preview-outline h6 {
+        margin-top: 30px;
+      }
+      .preview-outline table {
+        font-size: 12px;
+        width: 100%;
+      }
+      .preview-footer {
+        grid-column: 1/-1;
+        background: var(--background-secondary);
+        border-top: 1px solid var(--background-modifier-border);
+        padding: 5px 15px;
+        font-size: 10px;
+        color: var(--text-faint);
+      }
+      .preview-footer span {
+        float: right;
+      }
+      @media (max-width: 600px) {
+        #preview {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .preview-files,
+        .preview-outline {
+          display: none;
+        }
+        .preview-editor article {
+          padding: 14px 24px;
+        }
+        .preview-title span {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="theme-dark mod-linux">
+    <div id="preview">
+      <header class="preview-title">
+        TokyoDark <span>Notes for a quieter workspace</span>
+      </header>
+      <aside class="preview-files">
+        <div class="preview-label">VAULT</div>
+        <div class="nav-folder-title">
+          <div class="nav-folder-title-content">Personal notes</div>
+        </div>
+        <div class="nav-file-title is-active">
+          <div class="nav-file-title-content">Welcome</div>
+        </div>
+        <div class="nav-file-title">
+          <div class="nav-file-title-content">Daily notes</div>
+        </div>
+        <div class="nav-file-title">
+          <div class="nav-file-title-content">Reading list</div>
+        </div>
+        <div class="nav-file-title">
+          <div class="nav-file-title-content">Projects</div>
+        </div>
+        <div class="preview-label">QUICK CAPTURE</div>
+        <input
+          id="search"
+          type="text"
+          placeholder="Find a note…"
+          aria-label="Find a note"
+        /><button class="mod-cta">New note</button>
+      </aside>
+      <main class="preview-editor">
+        <div class="preview-tab">Welcome</div>
+        <article class="markdown-rendered">
+          <h1>Space to think.</h1>
+          <p>
+            A little less noise. A little more room for your ideas.<br />Welcome
+            to <strong>TokyoDark</strong>, your after-hours workspace.
+          </p>
+          <p>
+            <a class="internal-link" href="#">Connected thoughts</a> ·
+            <a class="external-link" href="#">An open window</a> ·
+            <a class="tag" href="#">#slow-notes</a>
+          </p>
+          <h2>Make something meaningful</h2>
+          <p>
+            Keep the useful pieces. Let the rest go.
+            <em>Start with one small thought.</em>
+          </p>
+          <div class="callout" data-callout="tip">
+            <div class="callout-title">
+              <div class="callout-title-inner">A clearer view</div>
+            </div>
+            <div class="callout-content">
+              <p>
+                Soft colors keep your notes readable, from the first line to the
+                last.
+              </p>
+            </div>
+          </div>
+          <h3>A small daily practice</h3>
+          <ul class="contains-task-list">
+            <li class="task-list-item">
+              <input
+                type="checkbox"
+                class="task-list-item-checkbox"
+                checked
+              />Read a few pages
+            </li>
+            <li class="task-list-item">
+              <input type="checkbox" class="task-list-item-checkbox" />Write
+              down one idea
+            </li>
+          </ul>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// Leave room for good ideas.</span>
+<span class="token keyword">const</span> note <span class="token operator">=</span> <span class="token function">capture</span><span class="token punctuation">(</span><span class="token string">"Something worth keeping"</span><span class="token punctuation">);</span></code></pre>
+        </article>
+      </main>
+      <aside class="preview-outline">
+        <div class="preview-label">OUTLINE</div>
+        <div class="markdown-rendered">
+          <h4>Keep it connected</h4>
+          <p>Notes become a body of work,<br />one connection at a time.</p>
+          <h5>Room for detail</h5>
+          <p>Gentle contrast. Familiar tools.</p>
+          <h6>The finishing touches</h6>
+          <blockquote>
+            <p>Pay attention.<br />Write it down.</p>
+          </blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th>Focus</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reading</td>
+                <td>In progress</td>
+              </tr>
+              <tr>
+                <td>Writing</td>
+                <td>Ready</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><mark>Keep this thought.</mark></p>
+          <p><code>one note at a time</code></p>
+        </div>
+      </aside>
+      <footer class="preview-footer">
+        TokyoDark · Component preview <span>1 backlink &nbsp; 164 words</span>
+      </footer>
+    </div>
+    <div id="test-components" hidden>
+      <div class="cm-s-obsidian">
+        <span class="cm-line HyperMD-header HyperMD-header-1">Heading</span
+        ><span class="cm-keyword">const</span
+        ><span class="cm-string">text</span>
+      </div>
+      <div class="cm-s-obsidian python-code">
+        <div class="cm-line HyperMD-codeblock">
+          <span class="cm-keyword">def</span>
+          <span class="cm-def">greet</span>(<span class="cm-variable">name</span>):
+        </div>
+      </div>
+      <span class="cm-def non-code-definition">definition outside code</span>
+      <div class="callout" data-callout="warning">Warning</div>
+      <div class="callout" data-callout="success">Success</div>
+      <div class="callout" data-callout="error">Error</div>
+      <div class="graph-view color-fill-tag"></div>
+      <div class="canvas-node mod-canvas-color-1"></div>
+    </div>
+  </body>
+</html>
