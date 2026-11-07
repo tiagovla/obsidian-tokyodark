@@ -1,0 +1,12 @@
+{
+	"extends": ["stylelint-config-obsidianmd"],
+
+	"ignoreFiles": ["src/**"],
+
+	"rules": {
+		"font-family-no-missing-generic-family-keyword": null,
+		"no-descending-specificity": null,
+		"block-no-empty": null,
+		"selector-class-pattern": null
+	}
+}
